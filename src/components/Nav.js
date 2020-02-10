@@ -6,9 +6,9 @@ export const Nav = () => {
   return (
     <nav>
       <ul>
-        <li>Home</li>
+        <li><Link to="/">Home</Link></li>
         <li><a href="https://twitter.com/markovtwainbot">Twitter</a></li>
-        <li>About</li>
+        <li><Link to="/about">About</Link></li>
       </ul>
     </nav>
   );
