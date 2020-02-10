@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Quote = ({ text, source }) => {
-  console.log(text, source);
+
   return (
     <section>
       <p>&quot;{text}&quot; - {source}</p>

@@ -5,7 +5,7 @@ import { useGetQuote } from '../hooks/useGetQuote';
 
 export const QuoteContainer = () => {
   const { sourceQuote, setCurrentSource } = useGetQuote('');
-  console.log(sourceQuote);
+
   const changeSource = ({ target }) => {
     setCurrentSource(target.value);
   };
