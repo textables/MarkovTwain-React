@@ -5,7 +5,7 @@ export const RadioButton = ({ value, label, onChange }) => {
   return (
     <>
       <input value={value} id={value} type="radio" name="sources" onChange={onChange}/>
-      <label htmlFor={value}>{label}</label>
+      <label htmlFor={value}>{label}</label>r
     </>
   );
 };
