@@ -4,7 +4,11 @@ import { RadioButtons } from '../components/RadioButtons';
 import { useGetQuote } from '../hooks/useGetQuote';
 
 export const QuoteContainer = () => {
-  const { sourcequote, setCurrentSource } = useGetQuote('');
+  const { sourceQuote, setCurrentSource } = useGetQuote('');
+  console.log(sourceQuote);
+  const changeSource = ({ target }) => {
+    setCurrentSource(target.value);
+  };
   
   const radioButtons = [
     { label: 'Mark Twain', value: '5e1e4ec52d2b701b5aaf022a' },
@@ -17,8 +21,8 @@ export const QuoteContainer = () => {
 
   return (
     <>
-      <Quote />
-      <RadioButtons radiobuttons={radioButtons}/>
+      <Quote {...sourceQuote}/>
+      <RadioButtons radiobuttons={radioButtons} onChange={changeSource} />
     </>
   );
 };
