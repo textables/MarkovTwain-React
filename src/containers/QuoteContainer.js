@@ -1,9 +1,10 @@
 import React from 'react';
 import { Quote } from '../components/Quote';
 import { RadioButtons } from '../components/RadioButtons';
+import { useGetQuote } from '../hooks/useGetQuote';
 
 export const QuoteContainer = () => {
-
+  const { sourcequote, setCurrentSource } = useGetQuote('');
   
   const radioButtons = [
     { label: 'Mark Twain', value: '5e1e4ec52d2b701b5aaf022a' },
