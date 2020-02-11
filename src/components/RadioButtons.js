@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RadioButton } from './RadioButton';
+import styles from './RadioButtons.css';
 
 export const RadioButtons = ({ radiobuttons, onChange }) => {
 
-  const radioButtonElements = radiobuttons.map(({ value, label }) => (
-    <RadioButton key={value} name="sources" value={value} label={label} onChange={onChange} />
+  const radioButtonElements = radiobuttons.map(({ value, label, image }) => (
+    <RadioButton key={value} name="sources" value={value} image={image} label={label} onChange={onChange} />
   ));
 
   return (

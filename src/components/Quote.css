@@ -1,0 +1,17 @@
+.quoteBubble {
+  background-size: cover;
+  background: url('http://markovtwain.herokuapp.com/assets/cloud.png');
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+p {
+  line-height: 1.2em;
+  width: 400px;
+}

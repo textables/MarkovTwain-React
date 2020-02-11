@@ -5,17 +5,17 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Nav } from './Nav';
 import { AboutUs } from './aboutus/AboutUs';
+import './App.css'; 
 
 export default function App() {
   return (
-    <Router>
+    <Router >
       <Header />
       <Nav />
       <Switch>
         <Route exact path="/" component={QuoteContainer} />
         <Route path="/about" component={AboutUs} />
       </Switch>
-      <Footer />
     </Router>
   );
 }
