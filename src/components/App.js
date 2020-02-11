@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 import { Nav } from './Nav';
 import { AboutUs } from './aboutus/AboutUs';
 import './App.css'; 
+import { GameContainer } from '../containers/GameContainer';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={QuoteContainer} />
         <Route path="/about" component={AboutUs} />
+        <Route path="/game" component={GameContainer} />
       </Switch>
     </Router>
   );

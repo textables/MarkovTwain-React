@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { getQuote } from '../services/getQuote';
 
 export const useGame = () => {
-  const [quote, setQuote] = useState({});
+  const [quote, setQuote] = useState({ text: '', source: '', id: '' });
   const [inGame, setInGame] = useState(true);
   const [hasGuessed, setHasGuessed] = useState(false);
   const [streak, setStreak] = useState(0);
   const [correctSource, setCorrectSource] = useState('');
 
   const onNext = () => {
-    getQuote()
+    getQuote('')
       .then(res => {
+        console.log(res);
         setQuote(res);
-        setCorrectSource(res.source);
+        setCorrectSource(res.id);
       });
   };
 

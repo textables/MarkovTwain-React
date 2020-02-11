@@ -3,6 +3,7 @@ export const getQuote = (source) => {
     .then(res => res.json())
     .then(({ tweetText, source }) => ({
       text: tweetText,
-      source: source.fullName
+      source: source.fullName,
+      id: source._id
     }));
 };
