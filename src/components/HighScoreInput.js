@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Quote.css';
 
-export const HighScoreInput = ({ score, onSubmit }) => {
+export const HighScoreInput = ({ highScore, onSubmit, text, source }) => {
 
   const [name, setState] = useState('AAA');
 
   return (
     <section className={styles.quoteBubble}>
-      <p>You scored: {score}</p>
+      <p>&quot;{text}&quot;  <br/><br/> - {source}</p>
+      <p>You scored: {highScore}</p>
       <form onSubmit={onSubmit}>
         <input type="text" value={name} onChange={(e) => setState(e.target.value)} maxLength="3"></input>
         <button type="submit">Submit</button>
@@ -18,6 +19,9 @@ export const HighScoreInput = ({ score, onSubmit }) => {
 };
 
 HighScoreInput.propTypes = {
-  score: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  highScore: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired
+
 };

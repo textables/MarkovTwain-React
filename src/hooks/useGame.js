@@ -7,11 +7,13 @@ export const useGame = () => {
   const [hasGuessed, setHasGuessed] = useState(false);
   const [streak, setStreak] = useState(0);
   const [correctSource, setCorrectSource] = useState('');
+  const [highScore, setHighScore] = useState(0);
 
   const onNext = () => {
+    if(!inGame) setInGame(true);
+    setHasGuessed(false);
     getQuote('')
       .then(res => {
-        console.log(res);
         setQuote(res);
         setCorrectSource(res.id);
       });
@@ -29,6 +31,18 @@ export const useGame = () => {
     setStreak(previousStreak => previousStreak + 1);
   };
 
+  const handleEndGame = () => {
+    toggleInGame();
+    setHighScore(streak);
+    setStreak(0);
+  };
+
+  const handleGuess = (event) => {
+    toggleHasGuessed();
+    if(event.target.value === correctSource) incrementStreak();
+    else handleEndGame();
+  };
+
   useEffect(() => {
     onNext();
   }, []);
@@ -37,11 +51,10 @@ export const useGame = () => {
     quote,
     correctSource,
     streak,
+    highScore,
     hasGuessed,
     inGame, 
     onNext,
-    toggleInGame,
-    toggleHasGuessed,
-    incrementStreak
+    handleGuess
   };
 };
