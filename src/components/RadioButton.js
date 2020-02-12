@@ -5,7 +5,7 @@ import styles from './RadioButton.css';
 export const RadioButton = ({ value, label, onChange, image }) => {
   return (
     <div>
-      <input value={value} id={value} type="radio" name="sources" onChange={onChange}/>
+      <input value={value} id={value} type="radio" name="sources" onClick={onChange}/>
       <label htmlFor={value}><img className={label === 'Surprise Me' ? styles.question : ''} src={image}/>{label}</label>
     </div>
   );

@@ -2,14 +2,19 @@ import { useEffect, useState } from 'react';
 import { getQuote } from '../services/getQuote';
 
 export const useGetQuote = () => {
-
+  const [fetch, setFetch] = useState(true);
   const [currentSource, setCurrentSource] = useState(''); 
   const [sourceQuote, setSourceQuote] = useState({});
 
   useEffect(() => {
     getQuote(currentSource)
       .then(setSourceQuote);
-  }, [currentSource]);
+  }, [currentSource, fetch]);
 
-  return { sourceQuote, setCurrentSource };
+  const changeSource = ({ target }) => {
+    setFetch(fetch => !fetch);
+    setCurrentSource(target.value);
+  };
+
+  return { sourceQuote, changeSource };
 };
