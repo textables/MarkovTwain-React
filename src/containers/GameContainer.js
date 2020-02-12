@@ -6,7 +6,7 @@ import { HighScoreInput } from '../components/HighScoreInput';
 import { useGame } from '../hooks/useGame';
 
 export const GameContainer = () => {
-  const { quote, correctSource, streak, highScore, hasGuessed, inGame, onNext, handleGuess } = useGame();
+  const { quote, correctSource, streak, highScore, hasGuessed, inGame, onNext, handleGuess, isOnLeaderBoard } = useGame();
 
   const sourceImageLibrary = {
     '5e1e4ec52d2b701b5aaf022a': 'http://markovtwain.herokuapp.com/assets/twain.png',
@@ -24,7 +24,7 @@ export const GameContainer = () => {
     { label: 'Lewis Carroll', value: '5e1e4ec52d2b701b5aaf0229', image: 'http://markovtwain.herokuapp.com/assets/carroll.png'  }
   ];
 
-  const quoteElement = inGame ? <Quote text={quote.text} source={hasGuessed ? quote.source : '??????'} /> : <HighScoreInput highScore={highScore} onSubmit={''} text={quote.text} source={quote.source} />;
+  const quoteElement = inGame ? <Quote text={quote.text} source={hasGuessed ? quote.source : '??????'} /> : <HighScoreInput isOnLeaderBoard={isOnLeaderBoard} highScore={highScore} text={quote.text} source={quote.source} />;
 
   return (
     <>
@@ -34,7 +34,7 @@ export const GameContainer = () => {
         inGame={inGame}
         correctImage={sourceImageLibrary[correctSource]}
         hasGuessed={hasGuessed}
-        onLeaderboard={''}
+        onLeaderboard={() => {}}
         onNext={onNext} />
       <RadioButtons radiobuttons={radioButtons} onChange={handleGuess}/>
     </>

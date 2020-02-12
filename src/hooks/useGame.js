@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getQuote } from '../services/getQuote';
+import { checkForHighScore } from '../services/checkForHighScore.js';
 
 export const useGame = () => {
   const [quote, setQuote] = useState({ text: '', source: '', id: '' });
@@ -8,6 +9,7 @@ export const useGame = () => {
   const [streak, setStreak] = useState(0);
   const [correctSource, setCorrectSource] = useState('');
   const [highScore, setHighScore] = useState(0);
+  const [isOnLeaderBoard, setIsOnLeaderBoard] = useState(false);
 
   const onNext = () => {
     if(!inGame) setInGame(true);
@@ -44,6 +46,13 @@ export const useGame = () => {
   };
 
   useEffect(() => {
+    if(highScore) {
+      checkForHighScore(highScore)
+        .then(setIsOnLeaderBoard);
+    }
+  }, [highScore]);
+
+  useEffect(() => {
     onNext();
   }, []);
 
@@ -55,6 +64,7 @@ export const useGame = () => {
     hasGuessed,
     inGame, 
     onNext,
-    handleGuess
+    handleGuess,
+    isOnLeaderBoard,
   };
 };
