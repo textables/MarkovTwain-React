@@ -4,13 +4,12 @@ import { Streak } from './Streak';
 import { CorrectAnswer } from './CorrectAnswer';
 import { Button } from './Button';
 
-export const GameControls = ({ inGame, streak, correctImage, hasGuessed, onLeaderboard, onNext }) => {
+export const GameControls = ({ inGame, streak, correctImage, hasGuessed, onNext }) => {
 
   return (
     <>
       <Streak streak={streak}/>
       <CorrectAnswer correctImage={correctImage} hasGuessed={hasGuessed}/>
-      <Button label='Leaderboard' onClick={onLeaderboard}/>
       <Button label={ inGame ? 'Next' : 'New Game'} onClick={onNext} />
     </>
   );
@@ -18,9 +17,8 @@ export const GameControls = ({ inGame, streak, correctImage, hasGuessed, onLeade
 
 GameControls.propTypes = {
   streak: PropTypes.number.isRequired,
-  correctImage: PropTypes.string.isRequired,
+  correctImage: PropTypes.string,
   hasGuessed: PropTypes.bool.isRequired,
-  onLeaderboard: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired,
   inGame: PropTypes.bool.isRequired
 };
