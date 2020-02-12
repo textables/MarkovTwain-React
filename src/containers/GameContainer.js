@@ -31,6 +31,7 @@ export const GameContainer = () => {
       {quoteElement}
       <GameControls
         streak={streak}
+        inGame={inGame}
         correctImage={sourceImageLibrary[correctSource]}
         hasGuessed={hasGuessed}
         onLeaderboard={''}

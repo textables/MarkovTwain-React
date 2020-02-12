@@ -4,11 +4,7 @@ import { RadioButtons } from '../components/RadioButtons';
 import { useGetQuote } from '../hooks/useGetQuote';
 
 export const QuoteContainer = () => {
-  const { sourceQuote, setCurrentSource } = useGetQuote('');
-
-  const changeSource = ({ target }) => {
-    setCurrentSource(target.value);
-  };
+  const { sourceQuote, changeSource } = useGetQuote('');
   
   const radioButtons = [
     { label: 'Mark Twain', value: '5e1e4ec52d2b701b5aaf022a', image: 'http://markovtwain.herokuapp.com/assets/twain.png'  },
