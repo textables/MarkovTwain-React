@@ -1,5 +1,61 @@
-@media (max-width: 700px) {
-  .description {
-    width: 75%;
+
+.About {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    width: 635px;
+    text-align: center;
+
+    a {
+      color: black
+    }
+  }
+
+  li {
+    list-style: none;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      width: 200px;
+      text-align: center;
+    }
+
+    .aboutLinks {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .devImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .linkImg, .gitImg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .linkImg {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1px;
+  }
+
+  @media (max-width: 700px) {
+    .description {
+      width: 75%;
+    }
   }
 }
