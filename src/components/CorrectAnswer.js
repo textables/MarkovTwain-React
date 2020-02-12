@@ -9,5 +9,5 @@ export const CorrectAnswer = ({ hasGuessed, correctImage }) => {
 
 CorrectAnswer.propTypes = {
   hasGuessed: PropTypes.bool.isRequired,
-  correctImage: PropTypes.string.isRequired
+  correctImage: PropTypes.string
 };
