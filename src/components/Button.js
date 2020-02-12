@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Game.css';
 
 export const Button = ({ label, onClick }) => {
   return (
-    <button onClick={onClick}>{label}</button>
+    <div className={styles.ButtonContainer}>
+      <button onClick={onClick}>{label}</button>
+    </div>
   );
 };
 

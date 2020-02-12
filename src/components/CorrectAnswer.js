@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Game.css';
 
 export const CorrectAnswer = ({ hasGuessed, correctImage }) => {
   return (
-    <img src={hasGuessed ? correctImage : 'http://markovtwain.herokuapp.com/assets/question-mark.png'} />
+    <div className={styles.CorrectAnswerContainer}>
+      <img className={styles.CorrectAnswer} src={hasGuessed ? correctImage : 'http://markovtwain.herokuapp.com/assets/question-mark.png'} />
+    </div>
   );
 };
 
