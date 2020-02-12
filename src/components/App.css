@@ -45,6 +45,14 @@ nav ul {
   }
 }
 
+p {
+  text-align: center;
+  line-height: 1.2em;
+  width: 400px;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
 @media (max-width: 960px) {
   .back-to-top {
       position: fixed;
