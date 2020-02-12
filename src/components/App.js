@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { QuoteContainer } from '../containers/QuoteContainer';
 import { Header } from './Header';
-//import { Footer } from './Footer';
 import { Nav } from './Nav';
 import { AboutUs } from './aboutus/AboutUs';
 import './App.css'; 

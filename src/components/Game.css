@@ -1,0 +1,59 @@
+.gameQuote {
+  width: 200px;
+}
+
+.endScore {
+  width: 200px;
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  height: 40px;
+  width: 120px;
+  margin: 5px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+
+  &:active {
+    background-color: black;
+    color: white;
+  }
+}
+
+.Streak {
+  border: 1px dotted black;
+  border-radius: 15px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 1% auto;
+}
+
+.StreakNo {
+  width: 60px;
+}
+
+.CorrectAnswerContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
+}
+
+.CorrectAnswer {
+  margin: 0 auto;
+}
